@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | zeroのblog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="progress-bar"></div>
+    <header class="glass">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;"><h2 style="margin: 0; color: var(--color-primary);">zeroのblog</h2></a>
+            </div>
+            <nav style="display: flex; align-items: center;">
+                <ul style="list-style: none; display: flex; gap: var(--spacing-lg);">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button id="theme-toggle">Mode</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h1>Our Projects</h1>
+            <p style="color: var(--color-secondary); margin-bottom: var(--spacing-xl);">
+                このブログ自体の開発記録や、これから挑戦していくプロジェクトのアーカイブです。
+            </p>
+
+            <div class="glass" style="margin-bottom: var(--spacing-lg);">
+                <span style="color: var(--color-primary); font-size: 0.8rem; font-weight: 600;">ACTIVE</span>
+                <h2 style="margin-top: 0.5rem;">zeroのblog 開発プロジェクト</h2>
+                <p>
+                    Vanilla JS, HTML, CSSのみを使用した、シンプルで高速なブログシステムの構築。設計図の作成からセキュリティ対策まで、一貫した開発プロセスを実践しています。
+                </p>
+                <div style="margin-top: var(--spacing-md);">
+                    <span class="btn btn-primary" style="font-size: 0.8rem;">HTML5</span>
+                    <span class="btn btn-primary" style="font-size: 0.8rem; margin-left: 0.5rem;">CSS3</span>
+                    <span class="btn btn-primary" style="font-size: 0.8rem; margin-left: 0.5rem;">JavaScript</span>
+                </div>
+            </div>
+
+            <div class="glass" style="opacity: 0.6;">
+                <span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 600;">UPCOMING</span>
+                <h2 style="margin-top: 0.5rem;">Coming Soon...</h2>
+                <p>次のプロジェクトを準備中です。新しい技術への挑戦をここに記録していきます。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 zeroのblog. Constructed with Vanilla JS and Passion.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

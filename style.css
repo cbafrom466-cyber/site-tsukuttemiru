@@ -1,0 +1,177 @@
+/*
+ * zeroのblog - Design System
+ * Palette: Deep Blue & Silver
+ */
+
+:root {
+    /* Primary Colors */
+    --color-bg: #0a192f;
+    --color-bg-light: #112240;
+    --color-primary: #64ffda; /* Cyan accent for contrast */
+    --color-secondary: #8892b0;
+    --color-text: #ccd6f6;
+    --color-text-header: #e6f1ff;
+    --color-silver: #c0c0c0;
+    --color-silver-light: #e6e6e6;
+    
+    /* Silver Gradient */
+    --gradient-silver: linear-gradient(135deg, #c0c0c0 0%, #ffffff 50%, #c0c0c0 100%);
+    
+    /* Spacing & Sizes */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+    
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+    
+    /* Shadows */
+    --shadow-soft: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+/* Light Mode Overrides */
+body.light-mode {
+    --color-bg: #f5f7fa;
+    --color-bg-light: #ffffff;
+    --color-primary: #0070f3;
+    --color-secondary: #4a5568;
+    --color-text: #2d3748;
+    --color-text-header: #1a202c;
+    --color-silver: #718096;
+    --shadow-soft: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+}
+
+/* Scroll Progress Bar */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: var(--color-primary);
+    z-index: 1000;
+    transition: width 0.1s ease-out;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    color: var(--color-text-header);
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--color-silver);
+}
+
+/* Layout Utilities */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+/* Glassmorphism Effect */
+.glass {
+    background: rgba(17, 34, 64, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    display: inline-block;
+}
+
+.btn-primary {
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-primary:hover {
+    background: rgba(100, 255, 218, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-silver {
+    background: var(--gradient-silver);
+    color: var(--color-bg);
+    border: none;
+}
+
+.btn-silver:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(192, 192, 192, 0.4);
+}
+
+/* Article Cards */
+.article-card {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background: transparent;
+    border: 1px solid var(--color-secondary);
+    color: var(--color-text);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-left: var(--spacing-md);
+}
+
+#theme-toggle:hover {
+    border-color: var(--color-primary);
+}
+footer {
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-secondary);
+    font-size: 0.9rem;
+}

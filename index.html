@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zeroのblog | 技術と日常を綴る</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="progress-bar"></div>
+    <header class="glass">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo">
+                <h2 style="margin: 0; color: var(--color-primary);">zeroのblog</h2>
+            </div>
+            <nav style="display: flex; align-items: center;">
+                <ul style="list-style: none; display: flex; gap: var(--spacing-lg);">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button id="theme-toggle">Mode</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero section">
+            <div class="container">
+                <h1 style="font-size: 3.5rem; margin-bottom: var(--spacing-md);">Hello, zero's world.</h1>
+                <p style="font-size: 1.2rem; color: var(--color-secondary); max-width: 600px; margin-bottom: var(--spacing-lg);">
+                    技術への挑戦と、日々の学びを記録するブログ。シンプルでありながらプレミアムな体験を目指して作成しています。
+                </p>
+                <div class="cta">
+                    <a href="#articles" class="btn btn-primary">記事を読む</a>
+                    <a href="projects.html" class="btn btn-silver" style="margin-left: 1rem;">開発プロセス</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="articles" class="section">
+            <div class="container">
+                <h2>Latest Articles</h2>
+                <div class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--spacing-lg); margin-top: var(--spacing-lg);">
+                    <!-- User's First Post -->
+                    <article class="glass article-card" onclick="location.href='posts/my-first-post.html'">
+                        <span style="color: var(--color-primary); font-size: 0.8rem; font-weight: 600;">GENERAL</span>
+                        <h3 style="margin-top: 0.5rem;">初めての投稿</h3>
+                        <p style="color: var(--color-secondary); font-size: 0.9rem; margin-bottom: var(--spacing-md);">
+                            『zeroのblog』へようこそ。このサイトの立ち上げと、これからの展望について。
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.8rem;">2026.03.23</span>
+                            <span style="font-size: 0.8rem; color: var(--color-primary);">2 min read</span>
+                        </div>
+                    </article>
+
+                    <!-- Article Card 1 -->
+                    <article class="glass article-card" onclick="location.href='posts/post-1.html'">
+                        <span style="color: var(--color-primary); font-size: 0.8rem; font-weight: 600;">DEVELOPMENT</span>
+                        <h3 style="margin-top: 0.5rem;">サイト構築の第一歩：設計図の重要性</h3>
+                        <p style="color: var(--color-secondary); font-size: 0.9rem; margin-bottom: var(--spacing-md);">
+                            初心者でも安全にサイトを公開するためのセキュリティ対策と、プランニングの重要性について。
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.8rem;">2026.03.23</span>
+                            <span style="font-size: 0.8rem; color: var(--color-primary);">5 min read</span>
+                        </div>
+                    </article>
+
+                    <!-- Article Card 2 -->
+                    <article class="glass article-card" onclick="location.href='posts/post-2.html'">
+                        <span style="color: var(--color-primary); font-size: 0.8rem; font-weight: 600;">DESIGN</span>
+                        <h3 style="margin-top: 0.5rem;">プレミアムなUI/UXを目指す配色理論</h3>
+                        <p style="color: var(--color-secondary); font-size: 0.9rem; margin-bottom: var(--spacing-md);">
+                            ディープブルーとシルバーを組み合わせた、落ち着きと高級感を両立させるデザイン。
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.8rem;">2026.03.23</span>
+                            <span style="font-size: 0.8rem; color: var(--color-primary);">3 min read</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 zeroのblog. Constructed with Vanilla JS and Passion.</p>
+            <a href="admin.html" style="font-size: 0.7rem; opacity: 0.5; margin-top: 20px; display: block;">[Blog Admin]</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>

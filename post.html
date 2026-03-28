@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記事詳細 | zeroのblog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="progress-bar"></div>
+    <header class="glass">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;"><h2 style="margin: 0; color: var(--color-primary);">zeroのblog</h2></a>
+            </div>
+            <nav style="display: flex; align-items: center;">
+                <ul style="list-style: none; display: flex; gap: var(--spacing-lg);">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button id="theme-toggle">Mode</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="section" id="post-view">
+            <!-- Dynamic Content -->
+            <div id="post-loading">記事を読み込み中...</div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 zeroのblog. Constructed with Vanilla JS and Passion.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Page-specific logic to load dynamic post
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const postId = params.get('id');
+            const postView = document.getElementById('post-view');
+            
+            if (!postId) {
+                postView.innerHTML = '<h1>記事が見つかりません</h1><a href="index.html">トップへ戻る</a>';
+                return;
+            }
+
+            const posts = JSON.parse(localStorage.getItem('user_posts') || '[]');
+            const post = posts.find(p => p.id === postId);
+
+            if (post) {
+                postView.innerHTML = `
+                    <header style="margin-bottom: var(--spacing-xl);">
+                        <span style="color: var(--color-primary); font-size: 0.9rem; font-weight: 600;">${post.category}</span>
+                        <h1 style="font-size: 3rem; margin-top: 0.5rem;">${post.title}</h1>
+                        <div style="color: var(--color-secondary); font-size: 0.9rem;">
+                            <span>${post.date}</span> • <span>${post.readTime} min read</span>
+                        </div>
+                    </header>
+                    <div class="content" style="font-size: 1.1rem; line-height: 1.8;">
+                        ${post.content}
+                    </div>
+                    <footer style="margin-top: var(--spacing-xl); border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: var(--spacing-lg);">
+                        <a href="index.html">← トップページに戻る</a>
+                    </footer>
+                `;
+            } else {
+                postView.innerHTML = '<h1>記事が見つかりません</h1><a href="index.html">トップへ戻る</a>';
+            }
+        });
+    </script>
+</body>
+</html>
