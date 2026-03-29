@@ -1,0 +1,25 @@
+[build]
+  # The directory that Netlify will use as the base for building.
+  base = ""
+
+  # The directory that contains the deploy-ready HTML files and assets.
+  # Since this is a simple static site, it is the root directory.
+  publish = ""
+
+  # The build command to run.
+  # No build command is needed for this static site.
+  command = ""
+
+[dev]
+  # Optional: Configuration for local development using Netlify CLI
+  port = 8888
+  publish = ""
+
+# Handle custom headers if needed in the future
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer-when-downgrade"
